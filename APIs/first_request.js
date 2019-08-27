@@ -1,6 +1,4 @@
 const request = require('request');
-// pry = require('pryjs');
-// eval(pry.it);
 
 request('https://jsonplaceholder.typicode.com/users/1', (error, response, body) => {
       
