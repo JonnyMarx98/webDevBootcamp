@@ -1,0 +1,10 @@
+<h1>blogs yes</h1>
+
+<% blogs.forEach((blog) => { %>
+    <div>
+        <h2><%= blog.title %></h2>
+        <img src="<%=blog.image%>" alt="">
+        <p><%= blog.body %></p>
+        <span><%= blog.created %> </span>
+    </div>
+<% }) %>
