@@ -5,3 +5,11 @@ i.icon {
 .container.main {
     margin-top: 5em;
 }
+
+#delete {
+    display: inline;
+}
+
+#indexImage {
+    display: block;
+}

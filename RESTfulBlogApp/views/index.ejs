@@ -1,15 +1,36 @@
 <% include partials/header.ejs %>
 
-<h1>blogs yes</h1>
+<!-- <h1>blogs yes</h1> -->
+<div class="ui text container main">
+    <div class="ui huge header">RESTful Blog App</div>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <% blogs.forEach((blog) => { %>
+                <div class="item">     
+                    <a class="image" href="/blogs/<%= blog._id %>">
+                        <img src="<%=blog.image%>" alt="">    
+                    </a>  
+                    <div class="content">
+                        <a href="/blogs/<%= blog._id %>" class="header"><%= blog.title %></a>
+                        <div class="meta">
+                            <span><%= blog.created.toDateString() %></span>
+                        </div>
+                        <div class="description">
+                            <p><%- blog.body.substring(0, 100) %>...</p>
+                        </div>
+                        <div class="extra">
+                            <a href="/blogs/<%= blog._id %>" 
+                                class="ui flooded basic violet button">
+                                Read More
+                                <i class="right chevron icon"></i> 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>    
+</div>
 
-<% blogs.forEach((blog) => { %>
-    <div>
-        <h2><%= blog.title %></h2>
-        <img src="<%=blog.image%>" alt="">
-        <p><%= blog.body.substring(0, 100) %>...</p>
-        <a href="/blogs/<%= blog._id %>">Read More</a>
-        <span><%= blog.created %> </span>
-    </div>
-<% }) %>
 
 <% include partials/footer.ejs %>
